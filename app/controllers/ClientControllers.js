@@ -13,7 +13,7 @@ module.exports = {
         })
     },
     client: (req, res) => {
-        Client.findById(req.params.id, (err, client) => {
+        Client.findById(req.params.id).populate('actions').exec( (err, client) => {
             if (err) {
                 return res.status(500).json({
                     message: 'Error while opening client',

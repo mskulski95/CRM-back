@@ -23,7 +23,11 @@ const ClientSchema = new Schema({
     },
     tel: {
         type: String
-    }
+    },
+    actions: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref:'Action'
+    }]
 
 })
 
